@@ -9,9 +9,9 @@ import java.util.Map;
  */
 public abstract class AbstractMapBag<E> implements Bag<E>, Serializable {
 
-	private Map<E, Integer> map;
+	private final Map<E, Integer> map;
 
-	public AbstractMapBag() {
+	AbstractMapBag() {
 		map = new HashMap<>();
 	}
 
@@ -22,6 +22,7 @@ public abstract class AbstractMapBag<E> implements Bag<E>, Serializable {
 		return true;
 	}
 
+	@SuppressWarnings("SuspiciousMethodCalls")
 	@Override
 	public boolean remove(Object o) {
 		map.remove(o);
