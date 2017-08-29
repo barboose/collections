@@ -62,12 +62,15 @@ public class TestCollectionBag {
 		CollectionBag<TestComplexVo> collection = new CollectionBag<>();
 		assertNotNull(collection);
 
-		TestComplexVo complexVo = new TestComplexVo(1L, APPLE, BigDecimal.ZERO);
-		collection.add(complexVo);
-		assertEquals(1, collection.count(complexVo));
-		collection.add(complexVo);
-		assertEquals(2, collection.count(complexVo));
-		System.out.println(collection.toString());
+		TestComplexVo complexVo1 = new TestComplexVo(1L, APPLE, BigDecimal.ZERO);
+		collection.add(complexVo1);
+		assertEquals(1, collection.count(complexVo1));
+		collection.add(complexVo1);
+		assertEquals(2, collection.count(complexVo1));
+
+		TestComplexVo complexVo2 = new TestComplexVo(2L, APPLE, BigDecimal.ZERO);
+		collection.add(complexVo2);
+		assertEquals(2, collection.count(complexVo1));
 	}
 
 	@Test
